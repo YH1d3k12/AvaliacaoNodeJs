@@ -1,0 +1,20 @@
+{
+  "name": "avaliacaonodejs",
+  "version": "1.0.0",
+  "description": "This repository contains my node js assessment",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YH1d3k12/AvaliacaoNodeJs.git"
+  },
+  "author": "Djalma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YH1d3k12/AvaliacaoNodeJs/issues"
+  },
+  "homepage": "https://github.com/YH1d3k12/AvaliacaoNodeJs#readme"
+}
