@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "npx nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --testMatch='**/*.test.js'",
+    "test:cov": "jest --testMatch='**/*.test.js' --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/YH1d3k12/AvaliacaoNodeJs/issues"
   },
-  "homepage": "https://github.com/YH1d3k12/AvaliacaoNodeJs#readme"
+  "homepage": "https://github.com/YH1d3k12/AvaliacaoNodeJs#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
 }
