@@ -30,42 +30,56 @@ describe('Testing Multiplication', () => {
     // testing one decimal and one negative number
     it('Should multiply two numbers', () => {
         const result = calculator.CalculatorMultiplication(-4, 10)
-        expect(result).toBe(-4.00);
+        expect(result).toBe(-40.00);
     })
 
     // trying to pass a string
     it('Should throw a TypeError when passing a string', () => {
         expect(() => {
             calculator.CalculatorMultiplication(-4, "batata");
-        }).toThrowError("Second argument is not a number");
+        }).toThrowError("Not a Number");
     });
 
     // trying to pass a boolean
-    it('It treats the boolean as 1 or 0, dont think its ok', () => {
+    it('Should throw an error message', () => {
         expect(() => {
             calculator.CalculatorMultiplication(true, false);
-        }).toThrowError("Both arguments should be numbers");
+        }).toThrowError("Boolean");
     });
 
     // trying to pass empty body
     it('Should throw an error message', () => {
         expect(() => {
             calculator.CalculatorMultiplication(null, null);
-        }).toThrowError("Both arguments are null");
+        }).toThrowError("Null");
     });
 
     // trying to pass one empty argument
     it('Should throw an error message', () => {
         expect(() => {
             calculator.CalculatorMultiplication(1, null);
-        }).toThrowError("Second argument is null");
+        }).toThrowError("Null");
     });
 
     // trying to pass one empty argument
     it('Should throw an error message', () => {
         expect(() => {
             calculator.CalculatorMultiplication(null, 1);
-        }).toThrowError("First argument is null");
+        }).toThrowError("Null");
+    });
+    
+    // trying to pass one undefined argument
+    it('Should throw an error message', () => {
+        expect(() => {
+            calculator.CalculatorMultiplication(undefined, 1);
+        }).toThrowError("Not a Number");
+    });
+
+     // trying to pass an empty string as argument
+    it('Should throw an error message', () => {
+        expect(() => {
+            calculator.CalculatorMultiplication("", 1);
+        }).toThrowError("Empty");
     });
 
     // trying to pass an incorrect syntax

@@ -95,12 +95,12 @@ class CalculatorController
         }
     }
 
-    // ********************** Potency ********************** //
-    CalculatorPotency(req, res)
+    // ********************** Exponentiation ********************** //
+    CalculatorExponentiation(req, res)
     {
         try
         {
-            const result = calculator.CalculatorPotency(
+            const result = calculator.CalculatorExponentiation(
                 req.body.num1,
                 req.body.num2
             );

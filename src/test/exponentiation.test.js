@@ -2,7 +2,7 @@ const { describe, expect, it } = require( '@jest/globals');
 const CalculatorServices = require('../services/calculator.js');
 
 
-describe('Testing addition', () => {
+describe('Testing Exponentiation', () => {
 
     const calculator = new CalculatorServices();
 
@@ -16,76 +16,76 @@ describe('Testing addition', () => {
     });
 
     // testing two regular numbers
-    it('Should sum two numbers', () => {
-        const result = calculator.CalculatorAddition(1,2)
-        expect(result).toBe(3.00);
+    it('Should pow the base number by the exponent', () => {
+        const result = calculator.CalculatorExponentiation(1,2)
+        expect(result).toBe(1.00);
     })
     
     // testing two decimal numbers
-    it('Should sum two numbers', () => {
-        const result = calculator.CalculatorAddition(4.4,3.2)
-        expect(result).toBe(7.60);
+    it('Should pow the base number by the exponent', () => {
+        const result = calculator.CalculatorExponentiation(4,3.5)
+        expect(result).toBe(128.00);
     })
 
     // testing one decimal and one negative number
-    it('Should sum two numbers', () => {
-        const result = calculator.CalculatorAddition(-4 ,3.2)
-        expect(result).toBe(-0.80);
+    it('Should pow the base number by the exponent', () => {
+        const result = calculator.CalculatorExponentiation(-4 ,3.2)
+        expect(result).toBe(NaN);
     })
 
     // trying to pass a string
     it('Should throw a TypeError when passing a string', () => {
         expect(() => {
-            calculator.CalculatorAddition(-4, "batata");
+            calculator.CalculatorExponentiation(-4, "batata");
         }).toThrowError("Not a Number");
     });
 
     // trying to pass a boolean
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition(true, true);
+            calculator.CalculatorExponentiation(true, true);
         }).toThrowError("Boolean");
     });
 
     // trying to pass empty body
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition(null, null);
+            calculator.CalculatorExponentiation(null, null);
         }).toThrowError("Null");
     });
 
     // trying to pass one empty argument
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition(1, null);
+            calculator.CalculatorExponentiation(1, null);
         }).toThrowError("Null");
     });
 
     // trying to pass one empty argument
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition(null, 1);
+            calculator.CalculatorExponentiation(null, 1);
         }).toThrowError("Null");
     });
 
     // trying to pass one undefined argument
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition(undefined, 1);
+            calculator.CalculatorExponentiation(undefined, 1);
         }).toThrowError("Not a Number");
     });
 
      // trying to pass an empty string as argument
     it('Should throw an error message', () => {
         expect(() => {
-            calculator.CalculatorAddition("", 1);
+            calculator.CalculatorExponentiation("", 1);
         }).toThrowError("Empty");
     });
 
     // trying to pass an incorrect syntax
     it('Should throw an reference error', () => {
         expect(() => {
-            calculator.CalculatorAddition(true, aaaaaa, b);
+            calculator.CalculatorExponentiation(true, aaaaaa, b);
         }).toThrow(ReferenceError);
     });
 });
