@@ -1,241 +1,74 @@
+const ArgumentVerification = require('../utilities/argument_verification.js');
+
+const verify = new ArgumentVerification();
+
 class CalculatorServices
 {
     /*************** Addition ****************/
     CalculatorAddition(num1, num2)
     {
-        if (num1 != null && num2 != null)
-        {
-            if (!isNaN(num1) && typeof num1 != "boolean" && !isNaN(num2) && typeof num2 != "boolean")
-            {
-                const result = parseFloat(num1) + parseFloat(num2);
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                if (isNaN(num1) && typeof num1 == "boolean" && isNaN(num2) && typeof num2 == "boolean") 
-                {
-                    throw new TypeError("Both arguments should be numbers");
-                } 
-                else if (isNaN(num1) && typeof num1 == "boolean") 
-                {
-                    throw new TypeError("First argument is not a number");
-                } 
-                else 
-                {
-                    throw new TypeError("Second argument is not a number");
-                }
-            }
-        }
-        else
-        {
-            if (num1 === null && num2 === null)
-            {
-                throw new Error("Both arguments are null");
-            }
-            else if (num1 === null)
-            {
-                throw new Error("First argument is null");
-            }
-            else
-            {
-                throw new Error("Second argument is null");
-            }
-        }
+        verify.isIsANumber(num1, num2);
+        verify.isItABoolean(num1, num2);
+        verify.isItNullOrEmpty(num1, num2);
+        
+        const result = parseFloat(num1) + parseFloat(num2);
+        return parseFloat(result.toFixed(2));
     }
 
     /*************** Subtraction ****************/
     CalculatorSubtraction(num1, num2)
     {
-        if (num1 != null && num2 != null)
-        {
-            if (!isNaN(num1) && typeof num1 != "boolean" && !isNaN(num2) && typeof num2 != "boolean")
-            {
-                const result = parseFloat(num1) - parseFloat(num2);
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                if (isNaN(num1) && typeof num1 === "boolean" && isNaN(num2) && typeof num2 === "boolean") 
-                {
-                    throw new TypeError("Both arguments should be numbers");
-                } 
-                else if (isNaN(num1)) 
-                {
-                    throw new TypeError("First argument is not a number");
-                } 
-                else 
-                {
-                    throw new TypeError("Second argument is not a number");
-                }
-            }
-        }
-        else
-        {
-            if (num1 === null && num2 === null)
-            {
-                throw new Error("Both arguments are null");
-            }
-            else if (num1 === null)
-            {
-                throw new Error("First argument is null");
-            }
-            else
-            {
-                throw new Error("Second argument is null");
-            }
-        }
+        verify.isIsANumber(num1, num2);
+        verify.isItABoolean(num1, num2);
+        verify.isItNullOrEmpty(num1, num2);
+
+        const result = parseFloat(num1) - parseFloat(num2);
+        return parseFloat(result.toFixed(2));
     }
 
     /*************** Division ****************/
     CalculatorDivision(num1, num2)
     {
-        if (num1 != null && num2 != null)
-        {
-            if (!isNaN(num1) && typeof num1 != "boolean" && !isNaN(num2) && typeof num2 != "boolean")
-            {
-                const result = parseFloat(num1) / parseFloat(num2);
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                if (isNaN(num1) && typeof num1 === "boolean" && isNaN(num2) && typeof num2 === "boolean") 
-                {
-                    throw new TypeError("Both arguments should be numbers");
-                } 
-                else if (isNaN(num1)) 
-                {
-                    throw new TypeError("First argument is not a number");
-                } 
-                else 
-                {
-                    throw new TypeError("Second argument is not a number");
-                }
-            }
-        }
-        else
-        {
-            if (num1 === null && num2 === null)
-            {
-                throw new Error("Both arguments are null");
-            }
-            else if (num1 === null)
-            {
-                throw new Error("First argument is null");
-            }
-            else
-            {
-                throw new Error("Second argument is null");
-            }
-        }
+        verify.isIsANumber(num1, num2);
+        verify.isItABoolean(num1, num2);
+        verify.isItNullOrEmpty(num1, num2);
+
+        const result = parseFloat(num1) / parseFloat(num2);
+        return parseFloat(result.toFixed(2));
     }
 
     /*************** Multiplication ****************/
     CalculatorMultiplication(num1, num2)
     {
-        if (num1 != null && num2 != null)
-        {
-            if (!isNaN(num1) && typeof num1 != "boolean" && !isNaN(num2) && typeof num2 != "boolean")
-            {
-                const result = parseFloat(num1) * parseFloat(num2);
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                if (isNaN(num1) && typeof num1 === "boolean" && isNaN(num2) && typeof num2 === "boolean") 
-                {
-                    throw new TypeError("Both arguments should be numbers");
-                } 
-                else if (isNaN(num1)) 
-                {
-                    throw new TypeError("First argument is not a number");
-                } 
-                else 
-                {
-                    throw new TypeError("Second argument is not a number");
-                }
-            }
-        }
-        else
-        {
-            if (num1 === null && num2 === null)
-            {
-                throw new Error("Both arguments are null");
-            }
-            else if (num1 === null)
-            {
-                throw new Error("First argument is null");
-            }
-            else
-            {
-                throw new Error("Second argument is null");
-            }
-        }
+        verify.isIsANumber(num1, num2);
+        verify.isItABoolean(num1, num2);
+        verify.isItNullOrEmpty(num1, num2);
+
+        const result = parseFloat(num1) * parseFloat(num2);
+        return parseFloat(result.toFixed(2));
     }
 
-    /*************** Pontecy ****************/
-    CalculatorPotency(num1, num2)
+    /*************** Exponentiation ****************/
+    CalculatorExponentiation(num1, num2)
     {
-        if (num1 != null && num2 != null)
-        {
-            if (!isNaN(num1) && typeof num1 != "boolean" && !isNaN(num2) && typeof num2 != "boolean")
-            {
-                const result = Math.pow(parseFloat(num1), parseFloat(num2));
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                if (isNaN(num1) && typeof num1 === "boolean" && isNaN(num2) && typeof num2 === "boolean") 
-                {
-                    throw new TypeError("Both arguments should be numbers");
-                } 
-                else if (isNaN(num1)) 
-                {
-                    throw new TypeError("First argument is not a number");
-                } 
-                else 
-                {
-                    throw new TypeError("Second argument is not a number");
-                }
-            }
-        }
-        else
-        {
-            if (num1 === null && num2 === null)
-            {
-                throw new Error("Both arguments are null");
-            }
-            else if (num1 === null)
-            {
-                throw new Error("First argument is null");
-            }
-            else
-            {
-                throw new Error("Second argument is null");
-            }
-        }
+        verify.isIsANumber(num1, num2);
+        verify.isItABoolean(num1, num2);
+        verify.isItNullOrEmpty(num1, num2);
+
+        const result = Math.pow(parseFloat(num1), parseFloat(num2));
+        return parseFloat(result.toFixed(2));
     }
 
 
     /*************** SquareRoot ****************/
     CalculatorSquareRoot(num1)
     {
-        if (num1 != null)
-        {
-            if (isNaN(num1) && typeof num1 === "boolean")
-            {
-                const result = Math.sqrt(parseFloat(num1));
-                return parseFloat(result.toFixed(2));
-            }
-            else
-            {
-                throw new TypeError("Argument is not a number");
-            }
-        }
-        else
-        {
-            throw new Error("Arguments is null");
-        }
+        verify.isIsANumber(num1);
+        verify.isItABoolean(num1);
+        verify.isItNullOrEmpty(num1);
+        
+        const result = Math.sqrt(parseFloat(num1));
+        return parseFloat(result.toFixed(2));
     }
 }
-
 module.exports = CalculatorServices;

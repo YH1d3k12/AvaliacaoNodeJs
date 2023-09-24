@@ -15,7 +15,7 @@ router.post('/add', controller.CalculatorAddition);
 router.post('/subtract', controller.CalculatorSubtraction);
 router.post('/divide', controller.CalculatorDivision);
 router.post('/multiply', controller.CalculatorMultiplication);
-router.post('/pow', controller.CalculatorPotency);
+router.post('/pow', controller.CalculatorExponentiation);
 router.post('/square', controller.CalculatorSquareRoot);
 
 
