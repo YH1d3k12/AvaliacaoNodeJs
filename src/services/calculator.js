@@ -64,6 +64,7 @@ class CalculatorServices
     CalculatorSquareRoot(num1)
     {
         verify.isIsANumber(num1);
+        verify.isIsANegativeNumber(num1);
         verify.isItABoolean(num1);
         verify.isItNullOrEmpty(num1);
         

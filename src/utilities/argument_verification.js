@@ -15,6 +15,19 @@ class ArgumentVerification
     }
 
     // ...args is an array of arguments
+    isIsANegativeNumber(...args)
+    {
+        args.forEach((arg, index) => {
+            if(arg < 0)
+            {
+                throw new TypeError(`Negative, argument at index: ${index}, of value: ${arg} is a negative number`)
+            }
+        });
+
+        return true;
+    }
+
+    // ...args is an array of arguments
     isItABoolean(...args)
     {
         args.forEach((arg, index) => {
